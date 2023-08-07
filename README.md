@@ -1,4 +1,4 @@
-# AaveBorrowerStaker
+# AaveBorrowerStaking
 
 Example on how to earn yield on protocols that require staking by borrowing the staked assets on Aave under the hood. This could be used on presales, auctions, dao tresuries, etc...
 
