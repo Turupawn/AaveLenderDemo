@@ -6,26 +6,27 @@ import "../src/AaveBorrowerStaking.sol";
 
 contract AaveBorrowerTest is Test {
     AaveBorrowerStaking public aaveBorrowerStaking;
+    address AAVE_POOL = 0x48914C788295b5db23aF2b5F0B3BE775C4eA9440;
+    address GHO_TOKEN = 0x5300000000000000000000000000000000000004;
+    address GHO_WHALE = 0x5278Bd8fbB6a3a63E26aDaf8e79866dc7dB4C434;
 
     function setUp() public {
         aaveBorrowerStaking = new AaveBorrowerStaking(
-            0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2, // Aave Pool on Mainnet
-            0x6B175474E89094C44Da98b954EedeAC495271d0F  // DAI on Mainnet
+            AAVE_POOL,
+            GHO_TOKEN
         );
     }
 
     function testBorrowAndWitdraw() public {
-        address daiAddress = 0x6B175474E89094C44Da98b954EedeAC495271d0F;
-        address daiWhale = 0xD831B3353Be1449d7131e92c8948539b1F18b86A;
-        vm.startPrank(daiWhale);
-        IERC20(daiAddress).approve(address(aaveBorrowerStaking), 1 ether);
-        aaveBorrowerStaking.stake(1 ether);
+        vm.startPrank(GHO_WHALE);
+        IERC20(GHO_TOKEN).approve(address(aaveBorrowerStaking), 0.1 ether);
+        aaveBorrowerStaking.stake(0.1 ether);
 
         skip(50 days);
 
-        aaveBorrowerStaking.unstake(1 ether);
+        aaveBorrowerStaking.unstake(0.1 ether);
         vm.stopPrank();
 
-        aaveBorrowerStaking.withdraw(0.001 ether);
+        aaveBorrowerStaking.withdraw(0.000001 ether);
     }
 }
