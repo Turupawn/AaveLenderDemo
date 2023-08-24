@@ -7,5 +7,5 @@ Example on how to earn yield on protocols that require staking by borrowing the 
 The testing script is done by using DAI and Aave on mainnet. Run it the following way:
 
 ```
-forge test --fork-url YOUR_MAINNET_RPC_URL
+forge test --fork-url https://sepolia-rpc.scroll.io/
 ```
