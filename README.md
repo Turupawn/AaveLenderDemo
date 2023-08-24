@@ -1,11 +1,13 @@
-# AaveBorrowerStaking
+![test workflow](https://github.com/Turupawn/AaveLenderDemo/actions/workflows/test.yml/badge.svg)
 
-Example on how to earn yield on protocols that require staking by borrowing the staked assets on Aave under the hood. This could be used on presales, auctions, dao tresuries, etc...
+# Aave Lender Demo
 
-## Test
+Smart contract that lends on Aave and collects yield. The code can be used as an example to earn passively on presales, auctions, dao treasuries or any contract that holds idle ERC20 tokens.
 
-The testing script is done by using DAI and Aave on mainnet. Run it the following way:
+## Running the test
 
-```
+The testing script lends DAI and Aave on Scroll Sepolia. Run it the following way:
+
+```bash
 forge test --fork-url https://sepolia-rpc.scroll.io/
 ```

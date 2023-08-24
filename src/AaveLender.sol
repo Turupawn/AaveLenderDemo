@@ -65,7 +65,7 @@ interface IERC20 {
 
 // This contract acts as a proxy to earn yield on AAVE. It can be used seamlessly on the background on
 // a variety of contexts such as auctions, DAO treasuries, lotteries, etc...
-contract AaveBorrowerStaking {
+contract AaveLender {
     // AAVE Pool Address, depolyed on Scroll Sepolia at 0x48914C788295b5db23aF2b5F0B3BE775C4eA9440
     address public immutable AAVE_POOL_ADDRESS;
     // In this example we will stake DAI, but any ERC20 supported by AAVE can be also used
